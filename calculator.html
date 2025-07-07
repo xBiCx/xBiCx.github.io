@@ -2,10 +2,10 @@
 <html lang="th">
 <head>
     <meta charset="UTF-8">
-    <title>เครื่องคิดเลข</title>
+    <title>Calculator</title>
     <style>
         body {
-            background: #f7f6f3;
+            background: #000000;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -15,24 +15,25 @@
             font-family: 'Inter', Arial, sans-serif;
         }
         .calculator {
-            background: #fff;
+            background: #000000;
             padding: 32px 24px;
             border-radius: 16px;
-            box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+            box-shadow: 0 1px 16px rgb(255, 145, 0);
             display: flex;
             flex-direction: column;
             align-items: center;
         }
         .display {
-            width: 240px;
+            width: 250px;
             height: 48px;
             font-size: 1.5rem;
             margin-bottom: 16px;
             text-align: right;
             padding: 8px 12px;
             border-radius: 8px;
-            border: 1px solid #e3e2e0;
-            background: #f1f1ef;
+            border: 1px solid #f09711;
+            background: #3f3636;
+            color: #fff;
         }
         .buttons {
             display: grid;
@@ -44,63 +45,80 @@
             font-size: 1.2rem;
             border: none;
             border-radius: 8px;
-            background: #ececec;
+            background: #4b4545;
+            color: #fff;
             cursor: pointer;
             transition: background 0.2s;
         }
         button:hover {
-            background: #e0e0e0;
+            background: #000000;
+            color: #fff;
         }
         .btn-equal {
-            background: #a3e635;
-            color: #222;
+            background: #f09711;
+            color: #fff;
             font-weight: bold;
         }
         .btn-equal:hover {
-            background: #84cc16;
+            background: #ecb057;
+            color: #fff;
         }
         .btn-clear {
-            background: #fca5a5;
-            color: #222;
+            background: #ff0a0a;
+            color: #ffffff;
         }
         .btn-clear:hover {
-            background: #ef4444;
-            color: #fff;
+            background: #ff4f4f;
+            color: #ffffff;
         }
     </style>
 </head>
 <body>
-    <h1>This my calculator</h1>
+    <h1 style="color:#fff;">This my calculator</h1>
     <div class="calculator">
         <input type="text" class="display" id="display" readonly>
         <div class="buttons">
             <button onclick="append('7')">7</button>
             <button onclick="append('8')">8</button>
             <button onclick="append('9')">9</button>
-            <button onclick="append('/')">÷</button>
+            <button onclick="appendOperator('/')">÷</button>
             <button onclick="append('4')">4</button>
             <button onclick="append('5')">5</button>
             <button onclick="append('6')">6</button>
-            <button onclick="append('*')">×</button>
+            <button onclick="appendOperator('*')">×</button>
             <button onclick="append('1')">1</button>
             <button onclick="append('2')">2</button>
             <button onclick="append('3')">3</button>
-            <button onclick="append('-')">−</button>
+            <button onclick="appendOperator('-')">−</button>
             <button onclick="append('0')">0</button>
             <button onclick="append('.')">.</button>
             <button class="btn-clear" onclick="clearDisplay()">C</button>
-            <button onclick="append('+')">+</button>
+            <button onclick="appendOperator('+')">+</button>
             <button class="btn-equal" style="grid-column: span 4;" onclick="calculate()">=</button>
         </div>
     </div>
     <script>
         const display = document.getElementById('display');
+        const operators = ['+', '-', '*', '/'];
+
         function append(char) {
             display.value += char;
         }
+
+        function appendOperator(op) {
+            if (display.value === '') return;
+            const lastChar = display.value[display.value.length - 1];
+            if (operators.includes(lastChar)) {
+                
+                return;
+            }
+            display.value += op;
+        }
+
         function clearDisplay() {
             display.value = '';
         }
+
         function calculate() {
             try {
                 display.value = eval(display.value);
