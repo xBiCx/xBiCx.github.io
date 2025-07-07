@@ -1,10 +1,295 @@
-/* File: index.css */
-p{
-    font-size: 14px;
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #181c2b 0%, #0b0d0e 100%);
+    font-family: 'Segoe UI', 'Inter', Arial, sans-serif;
+    color: #fff;
 }
-.subtitle {
-    font-style: italic;
+
+h1 {
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
 }
-#subtitle {
-    color: blue;
-} 
+.card {
+    width: 1440px;
+    height: 500px;
+    background: #232323;
+    position: relative;
+    display: flex;
+    place-content: center;
+    place-items: center;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.25);
+    padding: 40px 48px;
+    min-width: 350px;
+    max-width: 480px;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+.card h2 {
+    z-index: 1;
+    color: #00bfff;
+    font-size: 2.0em;
+    margin-bottom: 12px;
+    margin-top: 0;
+    letter-spacing: 1px;
+}
+.card h1,
+.card h2:not(:first-child) {
+    color: #fff;
+    margin: 0;
+    font-weight: 400;
+    font-size: 1.2em;
+}
+.card button {
+    margin-top: 32px;
+    padding: 12px 32px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    background: #ececec;
+    color: #232323;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.card button:hover {
+    background: #00bfff;
+    color: #fff;
+}
+.card::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 130%;
+    background-image: linear-gradient(180deg, rgb(0, 183, 255) 0%, rgb(255, 48, 255));
+    animation: rotBGimg 2s linear infinite;
+    transition: all 0.5s linear;
+}
+
+@keyframes rotBGimg {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.card::after {
+    content: "";
+    position: absolute;
+    background: #07182e;
+    inset: 5px;
+    border-radius: 15px;
+}
+
+.resume-container {
+    max-width: 950px;
+    margin: 40px auto;
+    background: rgba(24, 28, 43, 0.98);
+    border-radius: 32px;
+    box-shadow: 0 0 32px 4px #00f0ff88, 0 0 64px 8px #ff3cac55;
+    display: flex;
+    overflow: hidden;
+    flex-wrap: wrap;
+}
+
+.resume-left {
+    background: linear-gradient(135deg, #23243a 80%);
+    padding: 36px 28px;
+    width: 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 3px solid #ff3cac;
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-pic {
+    width: 145px;
+    height: 145px;
+    border-radius: 30px;
+    overflow: hidden;
+    border: 5px solid #00f0ff;
+    box-shadow: 0 0 24px #ff3cac, 0 0 12px #00f0ff;
+    margin-bottom: 18px;
+    background: #181c2b;
+}
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 24px;
+}
+
+.name {
+    font-size: 1.8em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #00f0ff;
+    margin: 0 0 6px 0;
+    text-shadow: 0 0 8px #00f0ff, 0 0 16px #ff3cac;
+    text-align: center;
+}
+.name span {
+    color: #ff3cac;
+    text-shadow: 0 0 8px #ff3cac;
+}
+
+.role {
+    font-size: 1.2em;
+    color: #fff;
+    margin-bottom: 22px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.contact {
+    width: 100%;
+    margin-bottom: 28px;
+    font-size: 1.05em;
+}
+.contact div {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.contact a {
+    color: #00f0ff;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+.contact a:hover {
+    color: #ff3cac;
+}
+
+.about {
+    background: rgba(0, 240, 255, 0.10);
+    border-left: 5px solid #ff3cac;
+    border-radius: 14px;
+    padding: 18px 14px;
+    margin-top: 18px;
+    width: 100%;
+}
+.about h3 {
+    margin: 0 0 8px 0;
+    color: #ff3cac;
+    font-size: 1.15em;
+    letter-spacing: 1px;
+}
+.about p {
+    margin: 0;
+    color: #fff;
+    font-size: 1em;
+}
+
+.resume-right {
+    flex: 1;
+    padding: 36px 36px 24px 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    background: transparent;
+}
+
+.section h3 {
+    color: #00f0ff;
+    font-size: 1.25em;
+    margin-bottom: 14px;
+    letter-spacing: 1px;
+    text-shadow: 0 0 8px #00f0ff;
+    background: #181c2b;
+    display: inline-block;
+    padding: 6px 24px 6px 18px;
+    border-radius: 18px 0 18px 0;
+    border-left: 6px solid #ff3cac;
+    font-weight: 700;
+}
+
+.exp-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 18px;
+    gap: 12px;
+}
+.exp-year {
+    min-width: 90px;
+    color: #ff3cac;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-right: 12px;
+    text-shadow: 0 0 6px #ff3cac;
+    text-align: right;
+}
+.exp-detail {
+    color: #fff;
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+.skills span {
+    background: linear-gradient(90deg, #00f0ff 0%, #ff3cac 100%);
+    color: #181818;
+    padding: 10px 22px;
+    border-radius: 22px;
+    font-weight: 600;
+    font-size: 1.05em;
+    box-shadow: 0 0 8px #00f0ff88, 0 0 8px #ff3cac88;
+    margin-bottom: 6px;
+    transition: background 0.2s, color 0.2s;
+    letter-spacing: 1px;
+}
+.skills span:hover {
+    background: linear-gradient(90deg, #ff3cac 0%, #00f0ff 100%);
+    color: #fff;
+}
+
+.section button {
+    margin-top: 18px;
+    padding: 14px 36px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #00f0ff 0%, #ff3cac 100%);
+    color: #181818;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 12px #00f0ff88, 0 0 12px #ff3cac88;
+    transition: background 0.2s, color 0.2s;
+    letter-spacing: 1px;
+}
+.section button:hover {
+    background: linear-gradient(90deg, #ff3cac 0%, #00f0ff 100%);
+    color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .resume-container {
+        flex-direction: column;
+        max-width: 98vw;
+    }
+    .resume-left {
+        width: 100%;
+        border-right: none;
+        border-bottom: 3px solid #ff3cac;
+        border-radius: 32px 32px 0 0;
+    }
+    .resume-right {
+        padding: 28px 16px 16px 16px;
+    }
+}

@@ -1,39 +1,66 @@
-<html>
-    <head>
-        <style>
-            body {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                min-height: 100vh;
-                margin: 0;
-                background: #ffffff;
-            }
-            .circle-img {
-                width: 180px;
-                height: 180px;
-                object-fit: cover;
-                border-radius: 50%;
-                box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-                margin-bottom: 24px;
-            }
-            h1 {
-                font-family: 'Inter', Arial, sans-serif;
-                font-size: 2rem;
-                font-weight: 600;
-                color: #37352f;
-            }
-        </style>
-    </head>
-    <body>
-        <img class="circle-img" src="รูปตัวฉันเอง.jpg" alt="Profile">
-        <h1>Hello World</h1>
-        <h1>ชื่อกิตติพงศ์ อยู่สุภาพ</h1>
-        <h2>รหัสนักศึกษา 663450171-7</h2>
-        <h2>สาขาวิทยาการคอมพิวเตอร์สารสนเทศ</h2>
-        <h2>Email: dreamhuom8@gmail.com</h2>
-        <h2>Facebook: https://www.facebook.com/kittipong.yusupap</h2>
-        <button onclick="window.location.href='calculator.html'" style="margin-top:32px;padding:12px 32px;font-size:1rem;border:none;border-radius:6px;background:#ececec;cursor:pointer;transition:background 0.2s;">ไปหน้าเครื่องคิดเลข</button>
-    </body>
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>My Profile</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="resume-container">
+        <div class="resume-left">
+            <div class="profile-pic">
+                <img src="รูปตัวฉันเอง.jpg" alt="Profile">
+            </div>
+            <h2 class="name">นายกิตติพงศ์ อยู่สุภาพ</h2>
+            <h2 class="role">นักศึกษาวิทยาการคอมพิวเตอร์สารสนเทศ</h2>
+            <div class="contact">
+                <div><span>📞</span> 096-982-5973</div>
+                <div><span>📧</span> dreamhuom8@gmail.com</div>
+                <div><span>🌐</span> <a href="https://www.facebook.com/kittipong.yusupap" target="_blank">Facebook</a></div>
+            </div>
+            <div class="about">
+                <h3>เกี่ยวกับผม</h3>
+                <p>
+                    นักศึกษาที่มีความสนใจด้านเทคโนโลยีและการเขียนโปรแกรม ชอบเรียนรู้สิ่งใหม่ ๆ และพร้อมพัฒนาทักษะเพื่ออนาคต
+                </p>
+            </div>
+        </div>
+        <div class="resume-right">
+            <div class="section">
+                <h3>ประสบการณ์</h3>
+                <div class="exp-item">
+                    <div class="exp-year">ปัจจุบัน&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                    <div class="exp-detail">
+                        <b>&nbsp;&nbsp;&nbsp;&nbsp;ยังไม่มี</b><br>
+                        &nbsp;&nbsp;&nbsp;ผมยังไม่มีประสบการณ์ทำงาน แต่ผมมีความกระตือรือร้นที่จะเรียนรู้และพัฒนาทักษะใหม่ๆ
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <h3>การศึกษา</h3>
+                <div class="exp-item">
+                    <div class="exp-year">2022-ปัจจุบัน</div>
+                    <div class="exp-detail">
+                        <b>วิทยาการคอมพิวเตอร์สารสนเทศ</b><br>
+                        มหาวิทยาลัยขอนแก่น<br>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <h3>Skill</h3>
+                <div class="skills">
+                    <span>Python</span>
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>C#</span>
+                    <span>Git</span>
+                    <span>GameDev</span>
+                </div>
+            </div>
+            <div class="section">
+                <button onclick="window.location.href='calculator.html'">ไปหน้าเครื่องคิดเลข</button>
+            </div>
+        </div>
+    </div>
+</body>
 </html>
